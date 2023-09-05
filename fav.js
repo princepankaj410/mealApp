@@ -34,7 +34,7 @@ for(var a=0;a<numericDataArray.length;a++){
    </a>
 
    <div style="display:flex;flex-wrap: wrap;">  
-   <a href="#" id="recipe" class="btn btn-primary" style="width:10em;" >Recipe</a>
+ <a href="dish.html?=${jsonData.idMeal}" id="recipe" class="btn btn-primary" style="width:10em;" >Recipe</a>
    <a href="#" id="recipe" class="btn btn-primary" style="width:10em;" onclick="removefromfav(${jsonData.idMeal})" >Romove fav</a>
      </div>
     
