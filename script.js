@@ -14,11 +14,16 @@ if(localStorage.getItem("fav")==null){
 
 let favorites = [];
 localStorage.setItem("start",1);
+
+
+
+
 async function searchMeals(query) {
   mainContent.innerHTML = '';
+  // fatching data by name
   const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`);
   const data = await response.json();
-  apidata=data;
+
   if (data) {
     // console.log(data.meals);
     data.meals.forEach(meal => {
@@ -41,6 +46,11 @@ async function searchMeals(query) {
     });
   }
 }
+
+
+
+
+
 var f=0;
 function addToFavorites(meal){
 // console.log((localStorage.getItem("start")));
@@ -56,6 +66,9 @@ function addToFavorites(meal){
    
   }
 }
+
+
+
 function updateFavoritesList() {
   var favlength=0;
   for(var a=0;a<localStorage.length;a++){
@@ -75,7 +88,12 @@ function updateFavoritesList() {
 document.getElementById('value').innerHTML =  `<a href="favarite.html" class="nav-link"> <p > FavoritesList &nbsp ${localStorage.getItem("fav")}</p></a>`;
   });
 }
+
+
+
 const favoriteItem = document.createElement('p');
+
+
 if(mainContent){
   searchInput.addEventListener('input', (event) => {
     const query = event.target.value;
@@ -83,7 +101,5 @@ if(mainContent){
   });
 searchMeals('');
 }
-function disp(){
-  for(var i=0;i<favorites.length;i++){
-    console.log(favorites[i]);
-  }}
+
+
