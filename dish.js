@@ -46,8 +46,14 @@ console.log(localStorage.getItem("fav"));
               console.log("sdf");
               const c=localStorage.getItem("fav");  
               localStorage.setItem(meal.idMeal,JSON.stringify(meal));
+
+              if(c==null){
+                  localStorage.setItem("fav",1);
+              }else{
+               localStorage.setItem("fav",parseInt(c)+1);
+              }
           
-              localStorage.setItem("fav",parseInt(c)+1);
+              
               
               
                   }
